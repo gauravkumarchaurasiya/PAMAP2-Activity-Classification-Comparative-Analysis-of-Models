@@ -10,7 +10,7 @@ Activity Classification on PAMAP2 dataset
 
 
 
-![Logo](https://lh5.googleusercontent.com/tNXETeRQNgMSKoUa6JRlL81YjD9RHD-WQM4iE0Wgxd-F2k4uFomWvotrtUXEJM8HqYYXky3Tlhmm6Zc28eslk5MoU6Psqs3JFPvPWfbQ8zYT1SOzYglNIaQR7AmZCCTcVw=w1280)
+![image](https://github.com/gauravkumarchaurasiya/PAMAP2-Activity-Classification-Comparative-Analysis-of-Models/assets/99001707/9e396531-d8e7-4b98-b27a-0945780b7517)
 
 
 ## Keywords
@@ -53,9 +53,10 @@ Total Dataset have 2872533 data, 54 Attributes.
 
 #### What is IMU sensors?
 Inertial measurement units contain an accelerometer, gyroscope, and magnetometer. The accelerometer measures acceleration, while the gyroscope measures angular velocity. Each of these measurements is represented in a three-axis coordinate system.
+	![image](https://github.com/gauravkumarchaurasiya/PAMAP2-Activity-Classification-Comparative-Analysis-of-Models/assets/99001707/a5896b12-34a4-4181-8c5b-2d064fafab89)
 
 - Sensor position:
-
+		
     1 IMU over the wrist on the dominant arm  
     1 IMU on the chest  
     1 IMU on the dominant side's ankle  
@@ -78,10 +79,12 @@ The raw data from the PAMAP 2 dataset, because it is realistic, has imperfection
           o	We are going to focus on heart rate as it is our most precise meter of check for tracking subjects during activities.
           o	Heart Rate data are missing due of frequency rate of sensors  
           o	Heart rate box plot (has outliers). So directly not impute mean values 
-	 
+	 	![image](https://github.com/gauravkumarchaurasiya/PAMAP2-Activity-Classification-Comparative-Analysis-of-Models/assets/99001707/15dc8913-ca80-435f-a221-94add71eb1e2)
+
 
           o	The bar chart shows that Rope Jumping and Running are the most cumbersome activities out of all the activities.Different Acitvity have specific and related heart rate(ofcourse). 
     	 
+		![image](https://github.com/gauravkumarchaurasiya/PAMAP2-Activity-Classification-Comparative-Analysis-of-Models/assets/99001707/5b874084-947e-48d3-9a66-cdf8bf1304a9)
 
           o	Then We impute mean to specific acitivityId and impute to that Id only. 
 
@@ -106,7 +109,11 @@ So, Dividing the whole data into training and testing data (75% data for trainin
 We will fit model on training data and test the model accuracy on test data.  
 
 ## FEATURES SCALING  
-Standardization can become skewed or biased if the input variable contains outlier values. To overcome this, the median and interquartile range can be used when standardizing numerical input variables.  
+Standardization can become skewed or biased if the input variable contains outlier values. To overcome this, the median and interquartile range can be used when standardizing numerical input variables. 
+The formula of RobustScaler is
+
+		![image](https://github.com/gauravkumarchaurasiya/PAMAP2-Activity-Classification-Comparative-Analysis-of-Models/assets/99001707/aac57a5b-28c8-432e-9ed0-f9798548828e)
+
 The attributes (timestamp, heart rate) are larger value than other values this can lead to biased on training model. To avoid this we Scaled the data by robustScaler.  
 ## #Why robustScaler?
 The dataset attributes have different units and contains outliers. And robustScaler is not affected by outliers.    
@@ -176,8 +183,7 @@ Precision: 0.4874
 Recall: 0.4690  
 F1-Score: 0.4085  
 
-![result](https://lh6.googleusercontent.com/bOUw7YN_1MXqppUUvsqeKHYDyYn-151J3vLEIa5V871be4lrpQ8IDzPW6y9ZovEWpX_kG2gQzfYzILKYURyAUcJVoc3UhpBInwpSs5GgR9Fn4s4FR7pZYH9sY7-30co=w1280)
-
+![image](https://github.com/gauravkumarchaurasiya/PAMAP2-Activity-Classification-Comparative-Analysis-of-Models/assets/99001707/fa669fc0-ffed-45ef-8f68-389298a535a6)
  
 In conclusion, our experiments on activity classification using machine learning models on the PAMAP2 dataset have yielded interesting results. Among the models tested, the Decision Tree Classifier, RandomForest Classifier, and KNN (K-Nearest Neighbors) showed promising performance.  
 Both the Decision Tree Classifier and RandomForest Classifier exhibited exceptional accuracy, achieving approximately 99%. This indicates that these models were able to accurately classify activities based on the provided dataset. The high accuracy suggests that these models are effective in capturing the underlying patterns and features that distinguish different activities.  
